@@ -1,0 +1,31 @@
+{
+  "name": "node-flower-power",
+  "version": "1.0.0",
+  "description": "A node.js module to hook into the Parrot Flower Power API",
+  "main": "flower-power.js",
+  "scripts": {
+    "test": "npm install && node test.js"
+  },
+  "author": {
+    "name": "Ali Karbassi",
+    "email": "ali@karbassi.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/karbassi/node-flower-power-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/karbassi/node-flower-power-api/issues"
+  },
+  "homepage": "https://github.com/karbassi/node-flower-power-api",
+  "keywords": [
+    "Parrot",
+    "Flower Power",
+    "Flower Power API"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.5.1",
+    "request": "^2.34.0"
+  }
+}
