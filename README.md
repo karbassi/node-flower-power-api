@@ -18,7 +18,7 @@ Install
 Example #1
 ---
 
-    var CloudAPI = require('./flower-power');
+    var CloudAPI = require('flower-power');
 
     var auth = {
       username: '',
@@ -55,7 +55,7 @@ Example #1
 Example #2
 ---
 
-    var CloudAPI = require('./flower-power');
+    var CloudAPI = require('flower-power');
 
     var auth = {
       username: '',
@@ -84,4 +84,3 @@ Example #2
     api.on('authenticated', getGarden);
     api.on('have-garden', getSamples);
     api.on('have-sample', getSample);
-
