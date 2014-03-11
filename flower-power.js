@@ -18,37 +18,37 @@ var refresh_token;
  * Main function
  * @param  {Object} args Object containing username, password, client_id, and client_secret.
  */
-var CloudAPI = function(args) {
+var FlowerPower = function(args) {
     EventEmitter.call(this);
     this.authenticate(args);
 };
 
-util.inherits(CloudAPI, EventEmitter);
+util.inherits(FlowerPower, EventEmitter);
 
 /**
  * Authenticate
  * @param  {Object}   args     Object containing username, password, client_id, and client_secret.
  * @param  {Function} callback Function that will be called once authenticated
  */
-CloudAPI.prototype.authenticate = function(args, callback) {
+FlowerPower.prototype.authenticate = function(args, callback) {
   if(!args) {
-    throw "CloudAPI Error: Authenticate 'args' not set.";
+    throw "FlowerPower Error: Authenticate 'args' not set.";
   }
 
   if(!args.username) {
-    throw "CloudAPI Error: Authenticate 'username' not set.";
+    throw "FlowerPower Error: Authenticate 'username' not set.";
   }
 
   if(!args.password) {
-    throw "CloudAPI Error: Authenticate 'password' not set.";
+    throw "FlowerPower Error: Authenticate 'password' not set.";
   }
 
   if(!args.client_id) {
-    throw "CloudAPI Error: Authenticate 'client_id' not set.";
+    throw "FlowerPower Error: Authenticate 'client_id' not set.";
   }
 
   if(!args.client_secret) {
-    throw "CloudAPI Error: Authenticate 'client_secret' not set.";
+    throw "FlowerPower Error: Authenticate 'client_secret' not set.";
   }
 
   username = args.username;
@@ -72,7 +72,7 @@ CloudAPI.prototype.authenticate = function(args, callback) {
     form: form,
   }, function(err, response, body) {
     if (err || response.statusCode != 200) {
-      throw "CloudAPI Error: Authenticate error: " + response.statusCode;
+      throw "FlowerPower Error: Authenticate error: " + response.statusCode;
     }
 
     body = JSON.parse(body);
@@ -97,7 +97,7 @@ CloudAPI.prototype.authenticate = function(args, callback) {
  * Get garden information
  * @param  {Function} callback Function that will be called once authenticated
  */
-CloudAPI.prototype.getGarden = function(callback) {
+FlowerPower.prototype.getGarden = function(callback) {
 
   // Wait until authenticated.
   if(!access_token) {
@@ -137,7 +137,7 @@ CloudAPI.prototype.getGarden = function(callback) {
  * @param  {Object}   options  Object containing plant 'id', and optional 'from', 'to' dates.
  * @param  {Function} callback Function that will be called once authenticated
  */
-CloudAPI.prototype.getSamples = function(options, callback) {
+FlowerPower.prototype.getSamples = function(options, callback) {
 
   // Wait until authenticated.
   if(!access_token) {
@@ -147,11 +147,11 @@ CloudAPI.prototype.getSamples = function(options, callback) {
   }
 
   if(!options) {
-    throw "CloudAPI Error: getSamples 'options' not set.";
+    throw "FlowerPower Error: getSamples 'options' not set.";
   }
 
   if(!options.id) {
-    throw "CloudAPI Error: getSamples 'id' not set.";
+    throw "FlowerPower Error: getSamples 'id' not set.";
   }
 
   if(!options.from && !options.to) {
@@ -200,4 +200,4 @@ CloudAPI.prototype.getSamples = function(options, callback) {
   return this;
 };
 
-module.exports = CloudAPI;
+module.exports = FlowerPower;
