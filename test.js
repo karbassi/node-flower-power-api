@@ -1,4 +1,4 @@
-var FlowerPower = require('./flower-power');
+var FlowerPower = require('./node-flower-power');
 
 var auth = {
   username: '',

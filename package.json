@@ -1,10 +1,10 @@
 {
   "name": "node-flower-power",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A node.js module to hook into the Parrot Flower Power API",
-  "main": "flower-power.js",
+  "main": "node-flower-power.js",
   "scripts": {
-    "test": "npm install && node test.js"
+    "test": "rm -rf ./node_modules && npm install && node test.js"
   },
   "author": {
     "name": "Ali Karbassi",

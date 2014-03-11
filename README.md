@@ -13,12 +13,12 @@ Getting Starting
 Install
 -------
 
-    npm install flower-power
+    npm install node-flower-power
 
 Example #1
 ---
 
-    var FlowerPower = require('flower-power');
+    var FlowerPower = require('node-flower-power');
 
     var auth = {
       username: '',
@@ -55,7 +55,7 @@ Example #1
 Example #2
 ---
 
-    var FlowerPower = require('flower-power');
+    var FlowerPower = require('node-flower-power');
 
     var auth = {
       username: '',
