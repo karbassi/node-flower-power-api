@@ -18,7 +18,7 @@ Install
 Example #1
 ---
 
-    var CloudAPI = require('flower-power');
+    var FlowerPower = require('flower-power');
 
     var auth = {
       username: '',
@@ -27,7 +27,7 @@ Example #1
       client_secret: '',
     };
 
-    var api = new CloudAPI(auth);
+    var api = new FlowerPower(auth);
 
     // Method #1
     api.getGarden(function(err, plants, sensors) {
@@ -55,7 +55,7 @@ Example #1
 Example #2
 ---
 
-    var CloudAPI = require('flower-power');
+    var FlowerPower = require('flower-power');
 
     var auth = {
       username: '',

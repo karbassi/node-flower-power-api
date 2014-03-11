@@ -1,6 +1,6 @@
 {
   "name": "node-flower-power",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A node.js module to hook into the Parrot Flower Power API",
   "main": "flower-power.js",
   "scripts": {
