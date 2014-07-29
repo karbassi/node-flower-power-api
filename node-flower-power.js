@@ -18,9 +18,9 @@ var refresh_token;
  * Main function
  * @param  {Object} args Object containing username, password, client_id, and client_secret.
  */
-var FlowerPower = function(args) {
+var FlowerPower = function(args, callback) {
     EventEmitter.call(this);
-    this.authenticate(args);
+    this.authenticate(args, callback);
 };
 
 util.inherits(FlowerPower, EventEmitter);
