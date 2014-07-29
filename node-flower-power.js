@@ -32,23 +32,33 @@ util.inherits(FlowerPower, EventEmitter);
  */
 FlowerPower.prototype.authenticate = function(args, callback) {
   if(!args) {
-    throw "FlowerPower Error: Authenticate 'args' not set.";
+    var err = new Error("Authenticate 'args' not set.");
+    callback(err);
+    return this;
   }
 
   if(!args.username) {
-    throw "FlowerPower Error: Authenticate 'username' not set.";
+    var err = new Error("Authenticate 'username' not set.");
+    callback(err);
+    return this;
   }
 
   if(!args.password) {
-    throw "FlowerPower Error: Authenticate 'password' not set.";
+    var err = new Error("Authenticate 'password' not set.");
+    callback(err);
+    return this;
   }
 
   if(!args.client_id) {
-    throw "FlowerPower Error: Authenticate 'client_id' not set.";
+    var err = new Error("Authenticate 'client_id' not set.");
+    callback(err);
+    return this;
   }
 
   if(!args.client_secret) {
-    throw "FlowerPower Error: Authenticate 'client_secret' not set.";
+    var err = new Error("Authenticate 'client_secret' not set.");
+    callback(err);
+    return this;
   }
 
   username = args.username;
@@ -72,7 +82,9 @@ FlowerPower.prototype.authenticate = function(args, callback) {
     form: form,
   }, function(err, response, body) {
     if (err || response.statusCode != 200) {
-      throw "FlowerPower Error: Authenticate error: " + response.statusCode;
+      var err = new Error("Authenticate error: " + response.statusCode);
+      callback(err);
+      return this;
     }
 
     body = JSON.parse(body);
@@ -84,7 +96,8 @@ FlowerPower.prototype.authenticate = function(args, callback) {
     this.emit('authenticated');
 
     if(callback) {
-      return callback();
+      callback(undefined, body);
+      return this;
     }
 
     return this;
@@ -147,11 +160,15 @@ FlowerPower.prototype.getSamples = function(options, callback) {
   }
 
   if(!options) {
-    throw "FlowerPower Error: getSamples 'options' not set.";
+    var err = new Error("getSamples 'options' not set.");
+    callback(err);
+    return this;
   }
 
   if(!options.id) {
-    throw "FlowerPower Error: getSamples 'id' not set.";
+    var err = new Error("getSamples 'id' not set.");
+    callback(err);
+    return this;
   }
 
   if(!options.from && !options.to) {
@@ -191,7 +208,8 @@ FlowerPower.prototype.getSamples = function(options, callback) {
     this.emit('have-sample', err, body.samples, body.events, body.fertilizer);
 
     if(callback) {
-      return callback(err, body.samples, body.events, body.fertilizer);
+      callback(err, body.samples, body.events, body.fertilizer);
+      return this;
     }
 
     return this;

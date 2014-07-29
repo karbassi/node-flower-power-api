@@ -27,7 +27,13 @@ Example #1
       client_secret: '',
     };
 
-    var api = new FlowerPower(auth);
+    var api = new FlowerPower(auth, function(err, data) {
+      if(err) {
+        console.log('Error:', err);
+      } else {
+        console.log('Logged in');
+      }
+    });
 
     // Method #1
     api.getGarden(function(err, plants, sensors) {
