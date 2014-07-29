@@ -69,6 +69,8 @@ Example #2
       client_id: '',
       client_secret: '',
     };
+    
+    var api = new FlowerPower(auth);
 
     // Method #2
     var getGarden = function() {
